@@ -16,6 +16,23 @@
 #define ADJUST 3
 
 / {
+    macros {
+        sym-deg: sym-deg {
+            label = "sym-deg";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N2 &kp KP_N4 &kp KP_N8>
+                , <&macro_release &kp LALT>
+    ;
+        };
+    };
+};
+
+/ {
 
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
@@ -88,7 +105,7 @@
 // |BTCLR | BT1   | BT2   |  BT3  |  BT4  |  BT5  |                |      |      |       |      |       |       |
 // |EXTPWR|RGB_HUD|RGB_HUI|RGB_SAD|RGB_SAI|RGB_EFF|                |      |      |       |      |       |       |
 // |      |RGB_BRD|RGB_BRI|       |       |       |                |      |      |       |      |       |       |
-// |      |       |       |       |       |       |RGB_TOG| |      |      |      |       |      |       |       |
+// |      |sym-deg|       |       |       |       |RGB_TOG| |      |      |      |       |      |       |       |
 //                |       |       |       |       |       | |      |      |      |       |      |
 
         Adjust_layer {
@@ -96,7 +113,7 @@
 &bt BT_CLR                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                                    &none &none &none &none &none &none
 &ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_EFF                                 &none &none &none &none &none &none
 &none                           &rgb_ug RGB_BRD &rgb_ug RGB_BRI &none           &none           &none                                           &none &none &none &none &none &none
-&none                           &none           &none           &none           &none           &none               &rgb_ug RGB_TOG  &none      &none &none &none &none &none &none
+&none                           &sym-deg        &none           &none           &none           &none               &rgb_ug RGB_TOG  &none      &none &none &none &none &none &none
                                                 &none           &none           &none           &none               &none            &none      &none &none &none &none
         >;
         };
