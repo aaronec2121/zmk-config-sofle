@@ -17,8 +17,8 @@
 
 / {
     macros {
-        deg_sym: deg_sym {
-            label = "deg_sym";
+        sym_deg: sym_deg {
+            label = "sym_deg";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -90,7 +90,7 @@
 //              |      |       |       |      |      |  |      |      |  <-  |  v   |  -> |
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &trans   &trans   &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                   &kp PG_UP &trans    &trans   &sym-deg &trans  &trans
+&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                   &kp PG_UP &trans    &trans   &sym_deg &trans  &trans
 &trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                 &kp PG_DN &trans    &trans   &trans   &trans  &trans
 &trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans   &trans  &trans    &trans    &kp UP   &trans   &trans  &trans
                         &trans       &trans       &trans       &trans  &trans   &trans  &trans    &kp LEFT  &kp DOWN  &kp RIGHT
