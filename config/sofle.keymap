@@ -27,6 +27,26 @@
                 , <&macro_release &kp LALT>
                 ;
         };
+        sym_mu: sym_mu {
+            label = "sym_mu";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N2 &kp KP_N3 &kp KP_N0>
+                , <&macro_release &kp LALT>
+                ;
+        };
+        sym_eps: sym_eps {
+            label = "sym_eps";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N2 &kp KP_N3 &kp KP_N8>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
 };
 
@@ -90,7 +110,7 @@
 //             |     |      |      |      |      |  |      |     |  <-  |  v   |  -> |
             bindings = <
 &trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &trans   &trans  &trans
-&trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &sym_deg &trans &trans
+&trans &trans &trans &sym_eps &trans &trans                   &trans &sym_mu  &trans   &sym_deg &trans &trans
 &trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &trans   &trans  &trans
 &trans &trans &trans &trans   &trans &trans  &trans   &trans  &trans &trans   &kp UP   &trans   &trans  &trans
               &trans &trans   &trans &trans  &trans   &trans  &trans &kp LEFT &kp DOWN &kp RIGHT
