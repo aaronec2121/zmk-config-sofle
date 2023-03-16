@@ -16,6 +16,21 @@
 #define ADJUST 3
 
 / {
+    macros {
+        deg_sym: deg_sym {
+            label = "deg_sym";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp N2 &kp N4 &kp N8>
+                , <&macro_release &kp LALT>
+                ;
+        };
+    };
+};
+
+/ {
 
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
