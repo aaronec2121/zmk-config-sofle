@@ -120,7 +120,7 @@
 //             |     |      |      |      |      |  |      |     |  <-  |  v   |  -> |
             bindings = <
 &trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &trans   &trans  &trans
-&trans &trans &trans &sym_eps &trans &trans                   &trans &sym_mu  &trans   &sym_deg &sym_pi &trans
+&trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &sym_deg &trans &trans
 &trans &trans &trans &trans   &trans &trans                   &trans &trans   &trans   &trans   &trans  &trans
 &trans &trans &trans &trans   &trans &trans  &trans   &trans  &trans &trans   &kp UP   &trans   &trans  &trans
               &trans &trans   &trans &trans  &trans   &trans  &trans &kp LEFT &kp DOWN &kp RIGHT
