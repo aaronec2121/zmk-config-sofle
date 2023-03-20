@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: infused-kim
-      url-base: https://github.com/infused-kim
+    - name: Xoffio
+      url-base: https://github.com/Xoffio/zmk.git
   projects:
     - name: zmk
-      remote: infused-kim
-      revision: sofle
+      remote: Xoffio
+      revision: xo-status-fx
       import: app/west.yml
