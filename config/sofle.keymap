@@ -17,6 +17,61 @@
 
 / {
     macros {
+        sw_025: sw_025 {
+            label = "sw_025";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N2 &kp KP_N5>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        sw_050: sw_050 {
+            label = "sw_050";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N5 &kp KP_N0>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        sw_075: sw_075 {
+            label = "sw_075";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N7 &kp KP_N5>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        sw_100: sw_100 {
+            label = "sw_100";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N1 &kp KP_N0 &kp KP_N0>
+                , <&macro_tap &kp RET>
+                ;
+        };
+        sw_125: sw_125 {
+            label = "sw_125";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N1 &kp KP_N2 &kp KP_N5>
+                , <&macro_tap &kp RET>
+                ;
+        };
         sym_deg: sym_deg {
             label = "sym_deg";
             compatible = "zmk,behavior-macro";
@@ -149,7 +204,7 @@
 // |     |      |      |      |   ^  |       |      |  |      |      |      |      |     |     |  _  |
 //              |      |  <-  |   v  |  ->   |      |  |      |      |      |      |     |
             bindings = <
-&kp GRAVE &none &none       &none    &none    &none                      &none &none   &none  &none    &sym_plusminus &kp PLUS
+&kp GRAVE &sw_025 &sw_050   &sw_075  &sw_100  &sw_125                    &none &none   &none  &none    &sym_plusminus &kp PLUS
 &kp TILDE &none &none       &sym_eps &none    &none                      &none &sym_mu &trans &sym_deg &sym_pi        &kp EQUAL
 &none     &none &sym_sig_UC &none    &none    &sym_sig_LC                &none &none   &none  &none    &none          &kp MINUS
 &none     &none &none       &none    &kp UP   &none       &trans   &none &none &none   &none  &none    &none          &kp UNDER
