@@ -90,10 +90,6 @@
     };
 };
 
-&sl {
-    release-after-ms = <10000>;
-};
-
 / {
 
    // Activate ADJUST layer by pressing numarrow and code
