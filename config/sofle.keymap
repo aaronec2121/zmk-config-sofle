@@ -24,6 +24,7 @@
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N2 &kp KP_N5>
                 , <&macro_tap &kp RET>
                 ;
@@ -35,6 +36,7 @@
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N5 &kp KP_N0>
                 , <&macro_tap &kp RET>
                 ;
@@ -46,6 +48,7 @@
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N0 &kp KP_N7 &kp KP_N5>
                 , <&macro_tap &kp RET>
                 ;
@@ -57,6 +60,7 @@
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N1 &kp KP_N0 &kp KP_N0>
                 , <&macro_tap &kp RET>
                 ;
@@ -68,6 +72,7 @@
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
+                , <&macro_release &kp LCTRL>
                 , <&macro_tap &kp KP_N0 &kp DOT &kp KP_N1 &kp KP_N2 &kp KP_N5>
                 , <&macro_tap &kp RET>
                 ;
