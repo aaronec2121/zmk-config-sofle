@@ -26,8 +26,8 @@
             label = "sw_025";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
@@ -40,8 +40,8 @@
             label = "sw_050";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
@@ -54,8 +54,8 @@
             label = "sw_075";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
@@ -68,8 +68,8 @@
             label = "sw_100";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
@@ -82,8 +82,8 @@
             label = "sw_125";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp A>
@@ -96,8 +96,8 @@
             label = "sym_deg";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N4 &kp KP_N8>
@@ -108,8 +108,8 @@
             label = "sym_mu";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N3 &kp KP_N0>
@@ -120,8 +120,8 @@
             label = "sym_eps";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N3 &kp KP_N8>
@@ -132,8 +132,8 @@
             label = "sym_pi";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N2 &kp KP_N7>
@@ -144,8 +144,8 @@
             label = "sym_sig_UC";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N2 &kp KP_N8>
@@ -156,8 +156,8 @@
             label = "sym_sig_LC";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N2 &kp KP_N2 &kp KP_N9>
@@ -168,8 +168,8 @@
             label = "sym_plusminus";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <20>;
+            tap-ms = <10>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp KP_N0 &kp KP_N1 &kp KP_N7 &kp KP_N7>
@@ -210,7 +210,7 @@
                &kp BSPC &kp LCTRL &kp LALT &kp RET &kp SPACE &kp SPACE &kp RET &mo NUMARROW &lt CODE LGUI &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HOME END>;
         };
 
         numarrow_layer {
@@ -229,25 +229,25 @@
              &kp N0 &kp LEFT &kp DOWN &kp RIGHT &none   &none &none  &trans &trans &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HOME END>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         code_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  `  | .025 | .050 | .075 | 0.1  | 0.125 |                |      |      |      |  +  |  -  |  ±  |
-// |  ~  |      |      |   ε  |      |       |                |      |  µ   |      |  °  |  π  |  =  |
-// |     |      |   Σ  |      |      |   σ   |                |      |      |      |     |     |  _  |
+// |  ~  |      |      |      |      |       |                |  σ   |  µ   |   ε  |  °  |  π  |  =  |
+// |     |      |      |      |      |       |                |      |      |      |     |     |  _  |
 // |     |      |      |      |   ^  |       |      |  |      |      |      |      |     |     |LockLayer|
 //              |      |  <-  |   v  |  ->   |      |  |      |      |      |      |     |
             bindings = <
-&kp GRAVE &sw_025 &sw_050   &sw_075  &sw_100  &sw_125                     &none  &none   &none  &kp PLUS &kp MINUS &sym_plusminus
-&kp TILDE &none &none       &sym_eps &none    &none                       &none  &sym_mu &trans &sym_deg &sym_pi   &kp EQUAL
-&none     &none &sym_sig_UC &none    &none    &sym_sig_LC                 &none  &none   &none  &none    &none     &kp UNDER
-&trans    &none &none       &none    &kp UP   &none       &trans   &none  &none  &none   &none  &none    &none     &to 2
-                &none       &kp LEFT &kp DOWN &kp RIGHT   &trans   &trans &trans &trans  &trans &none
+&kp GRAVE &sw_025 &sw_050 &sw_075  &sw_100  &sw_125                     &none  &none   &none  &kp PLUS &kp MINUS &sym_plusminus
+&kp TILDE &none &none     &sym_eps &none    &none                       &none  &sym_mu &trans &sym_deg &sym_pi   &kp EQUAL
+&none     &none &none     &none    &none    &sym_sig_LC                 &none  &none   &none  &none    &none     &kp UNDER
+&trans    &none &none     &none    &kp UP   &none       &trans   &none  &none  &none   &none  &none    &none     &to 2
+                &none     &kp LEFT &kp DOWN &kp RIGHT   &trans   &trans &trans &trans  &trans &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp HOME END>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
 // ------------------------------------------------------------------------------------------------------------
