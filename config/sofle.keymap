@@ -244,7 +244,7 @@
 &kp TILDE &sym_sig_LC &sym_mu  &sym_eps &sym_deg  &sym_pi               &none  &none  &none  &none    &none     &sym_plusminus
 &trans    &none       &none    &none    &none     &none                 &none  &none  &none  &none    &none     &kp UNDER
 &to BASE  &none       &none    &kp UP   &none     &none   &trans &trans &none  &none  &trans &trans   &kp BSLH  &to ADJUST
-                      &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans &trans   &trans
+                      &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
