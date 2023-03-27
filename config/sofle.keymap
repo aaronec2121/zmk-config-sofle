@@ -222,10 +222,10 @@
 // |BaseLayer|     |  1  |  2  |  3   |      |PLAY/PAUSE| | MUTE |     |        |  ,   |  .  |   |   |NextLayer|
 //                 |BKSPC|  0  |  .   |SPACE |  ENTER   | | ENTER|SPACE|NUMARROW| CODE | DEL |
             bindings = <
-&trans   &kp F1 &kp F2 &kp F3 &kp F4  &kp F5               &kp F6 &kp F7 &kp F8 &kp F9   &kp F10  &kp F11
-&trans   &none  &kp N7 &kp N8 &kp N9  &none                &none  &none  &none  &kp LBRC &kp RBRC &kp F12
-&trans   &none  &kp N4 &kp N5 &kp N6  &none                &none  &none  &none  &kp LBKT &kp RBKT &kp PIPE
-&to BASE &none  &kp N1 &kp N2 &kp N3  &none  &trans &trans &none  &none  &trans &trans   &kp PIPE &to CODE
+&trans   &kp F1 &kp F2 &kp F3 &kp F4  &kp F5               &kp F6 &kp F7 &kp F8 &kp F9 &kp F10  &kp F11
+&trans   &none  &kp N7 &kp N8 &kp N9  &none                &none  &none  &none  &none  &none &kp F12
+&trans   &none  &kp N4 &kp N5 &kp N6  &none                &none  &none  &none  &none  &none &kp PIPE
+&to BASE &none  &kp N1 &kp N2 &kp N3  &none  &trans &trans &none  &none  &trans &trans &kp PIPE &to CODE
                 &trans &kp N0 &kp DOT &trans &trans &trans &trans &trans &trans &trans
             >;
 
@@ -241,8 +241,8 @@
 //                  |  <-  |   v  |  ->  | SPACE |  ENTER   | |ENTER|SPACE|NUMARROW| CODE | DEL |
             bindings = <
 &kp GRAVE &sw_025     &sw_050  &sw_075  &sw_100   &sw_125               &none  &none  &none  &kp PLUS &kp MINUS &kp EQUAL
-&kp TILDE &sym_sig_LC &sym_mu  &sym_eps &sym_deg  &sym_pi               &none  &none  &none  &none    &none     &sym_plusminus
-&trans    &none       &none    &none    &none     &none                 &none  &none  &none  &none    &none     &kp UNDER
+&kp TILDE &sym_sig_LC &sym_mu  &sym_eps &sym_deg  &sym_pi               &none  &none  &none  &kp LBRC &kp RBRC  &sym_plusminus
+&trans    &none       &none    &none    &none     &none                 &none  &none  &none  &kp LBKT &kp RBKT  &kp UNDER
 &to BASE  &none       &none    &kp UP   &none     &none   &trans &trans &none  &none  &trans &trans   &kp BSLH  &to ADJUST
                       &kp LEFT &kp DOWN &kp RIGHT &trans  &trans &trans &trans &trans &trans &trans
             >;
