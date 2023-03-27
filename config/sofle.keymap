@@ -235,9 +235,9 @@
         code_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  `      | .025 | .050 | .075 | 0.1  | 0.125 |                  |     |        |      |  +  |  -  |  =  |
-// |  ~      |  σ   |  µ   |   ε  |  °   |   π   |                  |     |        |      |  {  |   } |  ±  |
-// |         |      |      |      |      |       |                  |     |        |      |  [  |   ] |  _  |
-// |BaseLayer|      |      |   ^  |      |       |PLAY/PAUSE| |MUTE |     |        |      |     |  \  |NextLayer|
+// |  ~      |  σ   |  µ   |   ε  |  °   |   π   |                  |     |        |      |  {  |  }  |  ±  |
+// |         |      |      |      |      |       |                  |     |        |      |  [  |  ]  |  _  |
+// |BaseLayer|      |      |   ^  |      |       |PLAY/PAUSE| |MUTE |     |        |  ,   |  .  |  \  |NextLayer|
 //                  |  <-  |   v  |  ->  | SPACE |  ENTER   | |ENTER|SPACE|NUMARROW| CODE | DEL |
             bindings = <
 &kp GRAVE &sw_025     &sw_050  &sw_075  &sw_100   &sw_125               &none  &none  &none  &kp PLUS &kp MINUS &kp EQUAL
