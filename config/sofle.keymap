@@ -229,16 +229,9 @@
     //};
     
     behaviors {
-        td0: td_base {
+        td_base: td_base {
             compatible = "zmk,behavior-tap-dance";
-            label = "td_layers";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&kp LCTRL>, <&to NUMBER>, <&to CODE>;
-        };
-        td1: td_numbers {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_numbers";
+            label = "td_base";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LCTRL>, <&to NUMBER>, <&to CODE>, <&to ADJUST>;
