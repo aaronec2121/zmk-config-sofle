@@ -269,17 +269,17 @@
         number_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |   ESC   |      |  /  |  *  |  (  |  )  |                   |     |        |      |     |       |  BKSPC  |
+// |   ESC   |  /   |  *  |  (  |  $  |  )  |                   |  ^  |    &   |  *   |  (  |   )   |  BKSPC  |
 // |   TAB   |sel_up|  7  |  8  |  9  |  +  |                   |     |        |      |     |       |   DEL   |
-// |SHFT/CAPS|sel_dn|  4  |  5  |  6  |  -  |                   |     |        |      |     |       |         |
+// |SHFT/CAPS|sel_dn|  4  |  5  |  6  |  -  |                   |     |        |      |     |   ;:  |   '"    |
 // |BaseLayer|sel_rt|  1  |  2  |  3  |  =  |PLAY/PAUSE| | MUTE |     |        |  ,   |  .  |   |   |NextLayer|
 //                  |BKSPC|  0  |  .  |SPACE|  ENTER   | | ENTER|SPACE|NUMARROW| CODE | DEL |
             bindings = <
-&trans   &none   &kp FSLH &kp STAR &kp LPAR &kp RPAR                &none  &none  &none  &none  &none    &kp BSPC
-&trans   &sel_up &kp N7   &kp N8   &kp N9   &kp PLUS                &none  &none  &none  &none  &none    &kp DEL
-&trans   &sel_dn &kp N4   &kp N5   &kp N6   &kp MINUS               &none  &none  &none  &none  &none    &kp PIPE
-&to BASE &sel_rt &kp N1   &kp N2   &kp N3   &kp EQUAL &trans &trans &none  &none  &trans &trans &kp PIPE &to CODE
-                 &trans   &kp N0   &kp DOT  &trans    &trans &trans &trans &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
+&trans   &kp FSLH &kp STAR &kp LPAR &trans  &kp RPAR                &trans &trans &trans &trans &trans   &kp BSPC
+&trans   &sel_up &kp N7    &kp N8   &kp N9  &kp PLUS                &none  &none  &none  &none  &none    &kp DEL
+&trans   &sel_dn &kp N4    &kp N5   &kp N6  &kp MINUS               &none  &none  &none  &none  &trans   &trans
+&to BASE &sel_rt &kp N1    &kp N2   &kp N3  &kp EQUAL &trans &trans &none  &none  &trans &trans &kp PIPE &to CODE
+                 &trans    &kp N0   &kp DOT &trans    &trans &trans &trans &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
