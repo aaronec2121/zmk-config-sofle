@@ -233,21 +233,21 @@
             compatible = "zmk,behavior-tap-dance";
             label = "td_base";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp LCTRL>, <&to NUMBER>, <&to CODE>, <&to ADJUST>;
         };
         td_rshft: td_rshft {
             compatible = "zmk,behavior-tap-dance";
             label = "td_rshft";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp RSHFT>, <&to NUMBER>;
         };
         td_shftcaps: td_shftcaps {
             compatible = "zmk,behavior-tap-dance";
             label = "td_shftcaps";
             #binding-cells = <0>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
         };
     };
@@ -326,7 +326,7 @@
                                                 &none           &none           &none            &none          &none  &none  &none &trans &trans &none
             >;
             
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp HOME END>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
             
         };
 
