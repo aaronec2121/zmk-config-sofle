@@ -269,7 +269,7 @@
 &kp TAB      &kp Q  &kp W    &kp E     &kp R    &kp T                         &kp Y     &kp U    &kp I     &kp O    &kp P    &kp DEL
 &td_shftcaps &kp A  &kp S    &kp D     &kp F    &kp G                         &kp H     &kp J    &kp K     &kp L    &kp SEMI &kp APOS
 &td_base     &kp Z  &kp X    &kp C     &kp V    &kp B     &kp C_PP &kp C_MUTE &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &td_rshft
-                    &kp BSPC &kp LCTRL &kp LALT &kp SPACE &kp RET  &kp RET    &kp SPACE &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
+                    &mo_tog 2 1 &kp LCTRL &kp LALT &kp SPACE &kp RET  &kp RET    &kp SPACE &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
         };
