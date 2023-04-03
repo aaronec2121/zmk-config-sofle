@@ -298,10 +298,10 @@
 // |BaseLayer|  σ   |  µ   |   ε  |  °   |   π   |PLAY/PAUSE| |MUTE |     |        |  ,   |  .  |  \  |NextLayer|
 //                  |      | CTRL | ALT  | SPACE |  ENTER   | |BKSPC|SPACE|NUMARROW| CODE | DEL |
             bindings = <
-&kp GRAVE &sw_025     &sw_050  &sw_075   &sw_100   &sw_125               &none  &none  &none  &kp PLUS &kp MINUS &kp EQUAL
-&kp TILDE &none       &none    &kp UP    &none     &none                 &none  &none  &none  &kp LBRC &kp RBRC  &sym_plusminus
-&trans    &none       &kp LEFT &kp DOWN  &kp RIGHT &none                 &none  &none  &none  &kp LBKT &kp RBKT  &kp UNDER
-&to BASE  &sym_sig_LC &sym_mu  &sym_eps  &sym_deg  &sym_pi &trans &trans &none  &none  &trans &trans   &kp BSLH  &to ADJUST
+&kp GRAVE &sw_025     &sw_050  &sw_075   &sw_100  &sw_125               &none  &none  &none  &kp PLUS &kp MINUS &kp EQUAL
+&kp TILDE &none       &kp UP   &none     &none    &none                 &none  &none  &none  &kp LBRC &kp RBRC  &sym_plusminus
+&trans    &kp LEFT    &kp DOWN &kp RIGHT &none    &none                 &none  &none  &none  &kp LBKT &kp RBKT  &kp UNDER
+&to BASE  &sym_sig_LC &sym_mu  &sym_eps  &sym_deg &sym_pi &trans &trans &none  &none  &trans &trans   &kp BSLH  &to ADJUST
                       &trans   &kp LCTRL &kp LALT &trans  &trans &trans &trans &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
