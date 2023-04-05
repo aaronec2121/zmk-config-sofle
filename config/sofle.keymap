@@ -210,6 +210,16 @@
                 , <&macro_release &kp LCTRL &kp LSHFT>
                 ;
         };
+        paren: paren {
+            label = "paren";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_tap &kp LPAR &kp RPAR &kp LEFT>
+                ;
+        };
     };
 };
 
@@ -271,24 +281,24 @@
 &td_base     &kp Z  &kp X    &kp C     &kp V    &kp B     &kp C_PP   &kp C_MUTE &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &td_rshft
                     &mo_tog 1 1 &kp LCTRL &kp LALT &kp SPACE &kp RET &kp BSPC   &kp SPACE &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
         number_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |   ESC   |  /   |  *  |  (  |  $  |  )  |                   |  ^  |    &   |  *   |  (  |   )   |  BKSPC  |
+// |   ESC   |      |  /  |  *  |  $  |(macro)|                 |  ^  |    &   |  *   |  (  |   )   |  BKSPC  |
 // |   TAB   |sel_up|  7  |  8  |  9  |  +  |                   |     |        |      |     |       |   DEL   |
 // |SHFT/CAPS|sel_dn|  4  |  5  |  6  |  -  |                   |     |        |      |     |   ;:  |   '"    |
 // |BaseLayer|sel_rt|  1  |  2  |  3  |  =  |PLAY/PAUSE| | MUTE |     |        |  ,   |  .  |   |   |NextLayer|
 //                  |     |  0  |  .  |SPACE|  ENTER   | | BKSPC|SPACE|NUMARROW| CODE | DEL |
             bindings = <
-&kp BSPC &kp FSLH &kp STAR &kp LPAR &trans  &kp RPAR                &trans &trans &trans &trans &trans   &kp BSPC
+&kp BSPC &none   &kp FSLH  &kp STAR &trans  &paren                  &trans &trans &trans &trans &trans   &kp BSPC
 &trans   &sel_up &kp N7    &kp N8   &kp N9  &kp PLUS                &none  &none  &none  &none  &none    &kp DEL
 &trans   &sel_dn &kp N4    &kp N5   &kp N6  &kp MINUS               &none  &none  &none  &none  &trans   &trans
 &to BASE &sel_rt &kp N1    &kp N2   &kp N3  &kp EQUAL &trans &trans &none  &none  &trans &trans &kp PIPE &to CODE
                  &trans    &kp N0   &kp DOT &trans    &trans &trans &trans &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
         code_layer {
 // ------------------------------------------------------------------------------------------------------------
@@ -304,7 +314,7 @@
 &to BASE  &sym_sig_LC &sym_mu  &sym_eps  &sym_deg &sym_pi &trans &trans &none  &none  &trans &trans   &kp BSLH  &to ADJUST
                       &trans   &kp LCTRL &kp LALT &trans  &trans &trans &trans &lt NUMBER PSCRN &lt CODE LGUI &kp DEL
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_PREV C_NEXT>;
         };
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR    | BT1   | BT2   |  BT3  |  BT4  |  BT5  |                 |      |      |       |      |       |     |
@@ -321,7 +331,7 @@
                                                 &none           &none           &none            &none          &none  &none  &none &trans &trans &none
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp UP DOWN>;
 
         };
     };
