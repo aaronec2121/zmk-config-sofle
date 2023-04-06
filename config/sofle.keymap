@@ -208,6 +208,20 @@
                 = <&macro_tap &kp F2 &kp LPAR &kp RPAR &kp LEFT>
                 ;
         };
+        
+        combos {
+            compatible = "zmk,combos";
+            cmb_bspc {
+                timeout-ms = <50>;
+                key-positions = <0 1>;
+                bindings = <&kp BSPC>;
+            };
+            cmb_del {
+                timeout-ms = <50>;
+                key-positions = <1 2>;
+                bindings = <&kp DEL>;
+            };
+        };
     };
 };
 
