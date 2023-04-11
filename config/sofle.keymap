@@ -161,42 +161,6 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sel_up: sel_up {
-            label = "sel_up";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <10>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp UP>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                ;
-        };
-        sel_dn: sel_dn {
-            label = "sel_dn";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <10>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp DOWN>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                ;
-        };
-        sel_rt: sel_rt {
-            label = "sel_rt";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <20>;
-            tap-ms = <10>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LSHFT>
-                , <&macro_tap &kp RIGHT>
-                , <&macro_release &kp LCTRL &kp LSHFT>
-                ;
-        };
         paren: paren {
             label = "paren";
             compatible = "zmk,behavior-macro";
@@ -245,28 +209,14 @@
     //};
     
     behaviors {
-        mo_tog: behavior_mo_tog {
-            compatible = "zmk,behavior-hold-tap";
-            label = "mo_tog";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&tog>;
-        };
-        td_base: td_base {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_base";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL>, <&to NUMBER>, <&to CODE>, <&to ADJUST>;
-        };
-        td_rshft: td_rshft {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_rshft";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RSHFT>, <&to NUMBER>;
-        };
+        //mo_tog: behavior_mo_tog {
+        //    compatible = "zmk,behavior-hold-tap";
+        //    label = "mo_tog";
+        //    #binding-cells = <2>;
+        //    flavor = "hold-preferred";
+        //    tapping-term-ms = <200>;
+        //    bindings = <&mo>, <&tog>;
+        //};
         td_shftcaps: td_shftcaps {
             compatible = "zmk,behavior-tap-dance";
             label = "td_shftcaps";
@@ -302,13 +252,13 @@
 // |    `    |  ~   |     |     |  $  |(macro)|                | .025 | .050 | .075 | 0.1 | 0.125 |  BKSPC  |
 // |   TAB   |  9   |  8  |  7  |  =  |  _  |                  |  σ   |  µ   |  ε   |  {  |   }   |         |
 // |SHFT/CAPS|  6   |  5  |  4  |  +  |  -  |                  |  °   |  π   |  ±   |  [  |   ]   |         |
-// |BaseLayer|  3   |  2  |  1  |  *  |  /  | MUTE| |PLAY/PAUSE|      |      |  ,   |  .  | LGUI  |PRINTSCRN|
+// |BaseLayer|  3   |  2  |  1  |  *  |  /  | MUTE| |PLAY/PAUSE| HOME | END  |  ,   |  .  | LGUI  |PRINTSCRN|
 //                  |  .  |  0  | RET |     |SPACE| |  SPACE   |      |  <-  |   v  |  -> |
             bindings = <
 &kp GRAVE &kp TILDE &none   &none  &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125  &kp BSPC
 &trans    &kp N9    &kp N8  &kp N7 &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC &none
-&trans    &kp N6    &kp N5  &kp N4 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT &trans
-&to BASE  &kp N3    &kp N2  &kp N1 &kp STAR  &kp FSLH  &trans      &trans &none    &none   &trans   &trans   &kp LGUI &kp PSCRN
+&trans    &kp N6    &kp N5  &kp N4 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT &none
+&to BASE  &kp N3    &kp N2  &kp N1 &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &kp LGUI &kp PSCRN
                     &kp DOT &kp N0 &trans    &trans    &trans      &trans &trans   &trans  &trans   &trans
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_NEXT C_PREV>;
