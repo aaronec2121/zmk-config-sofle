@@ -200,11 +200,6 @@
                 key-positions = <24 47>;
                 bindings = <&kp CAPS>;
             };
-            cmb_adjustlayer {
-                timeout-ms = <50>;
-                key-positions = <55 56 57>;
-                bindings = <&mo ADJUST>;
-            };
         };
     };
 };
@@ -242,16 +237,16 @@
         
         default_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |   ESC   |  1  |  2  |  3  |  4  |  5  |                  |  6  |  7   |  8   |  9  |   0   | BKSPC |
-// |   TAB   |  Q  |  W  |  E  |  R  |  T  |                  |  Y  |  U   |  I   |  O  |   P   |   |   |
-// |SHFT/CAPS|  A  |  S  |  D  |  F  |  G  |                  |  H  |  J   |  K   |  L  |  ; :  |  ' "  |
-// |   CTRL  |  Z  |  X  |  C  |  V  |  B  |MUTE | |PLAY/PAUSE|  N  |  M   |  ,   |  .  |  / ?  | SHIFT |
+// |   ESC   |  1  |  2  |  3  |  4  |  5  |                  |  6  |  7   |  8   |  9  |   0   |  BKSPC  |
+// |   TAB   |  Q  |  W  |  E  |  R  |  T  |                  |  Y  |  U   |  I   |  O  |   P   |    |    |
+// |SHFT/CAPS|  A  |  S  |  D  |  F  |  G  |                  |  H  |  J   |  K   |  L  |  ; :  |   ' "   |
+// |   CTRL  |  Z  |  X  |  C  |  V  |  B  |MUTE | |PLAY/PAUSE|  N  |  M   |  ,   |  .  |  / ?  |SHFT/CAPS|
 //                 | WIN | ALT | RET |RAISE|SPACE| |  SPACE   |RAISE|  <-  |   v  |  -> |
             bindings = <
 &kp ESC      &kp N1 &kp N2   &kp N3   &kp N4  &kp N5                         &kp N6    &kp N7   &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp TAB      &kp Q  &kp W    &kp E    &kp R   &kp T                          &kp Y     &kp U    &kp I     &kp O    &kp P    &kp PIPE
+&kp TAB      &kp Q  &kp W    &kp E    &kp R   &kp T                          &kp Y     &kp U    &kp I     &kp O    &kp P    &kp NUBS
 &td_shftcaps &kp A  &kp S    &kp D    &kp F   &kp G                          &kp H     &kp J    &kp K     &kp L    &kp SEMI &kp APOS
-&kp LCTRL    &kp Z  &kp X    &kp C    &kp V   &kp B     &kp C_MUTE &kp C_PP  &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+&kp LCTRL    &kp Z  &kp X    &kp C    &kp V   &kp B     &kp C_MUTE &kp C_PP  &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &td_shftcaps
                     &kp LGUI &kp LALT &kp RET &mo RAISE &kp SPACE  &kp SPACE &mo RAISE &kp LEFT &kp DOWN &kp RIGHT
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -263,13 +258,13 @@
 // |    `    |  ~   |     |     |  $  |  () |                  | .025 | .050 | .075 | 0.1 | 0.125 |  BKSPC  |
 // |   TAB   |  7   |  8  |  9  |  =  |  _  |                  |  σ   |  µ   |  ε   |  {  |   }   |         |
 // |MirrorLyr|  4   |  5  |  6  |  +  |  -  |                  |  °   |  π   |  ±   |  [  |   ]   |         |
-// |BaseLayer|  1   |  2  |  3  |  *  |  /  | MUTE| |PLAY/PAUSE| HOME | END  |  ,   |  .  | LGUI  |PRINTSCRN|
+// |BaseLayer|  1   |  2  |  3  |  *  |  /  | MUTE| |PLAY/PAUSE| HOME | END  |  ,   |  .  |       |AdjustLyr|
 //                  |  0  |  .  | RET |     |SPACE| |  SPACE   |      |  <-  |   v  |  -> |
             bindings = <
-&kp GRAVE  &kp TILDE &none  &none  &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125  &kp BSPC
-&trans     &kp N7    &kp N8 &kp N9 &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC &none
-&mo MIRROR &kp N4    &kp N5 &kp N6 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT &none
-&to BASE   &kp N1    &kp N2 &kp N3 &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &kp LGUI &kp PSCRN
+&kp GRAVE  &kp TILDE &none  &none  &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125    &kp BSPC
+&trans     &kp N7    &kp N8 &kp N9 &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC   &none
+&mo MIRROR &kp N4    &kp N5 &kp N6 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT   &none
+&to BASE   &kp N1    &kp N2 &kp N3 &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &mo ADJUST &mo ADJUST
                     &kp N0 &kp DOT &trans    &trans    &trans      &trans &trans   &trans  &trans   &trans
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
@@ -282,13 +277,13 @@
 // |   |   |  P   |  O  |  I  |  U  |  Y  |                  |      |      |       |      |       |     |
 // |       |  ; : |  L  |  K  |  J  |  H  |                  |      |      |       |      |       |     |
 // | RSHFT |  / ? |  .  |  ,  |  M  |  N  | MUTE| |PLAY/PAUSE|      |      |       |      |       |     |
-//                |     |     | RET |     |SPACE| |          |      |      |       |      |
+//                |PSCRN|     | RET |     |SPACE| |          |      |      |       |      |
             bindings = <
-&kp BSPC  &kp N0   &kp N9  &kp N8    &kp N7 &kp N6                 &none &none  &none &none &none &none
-&kp ESC   &kp P    &kp O   &kp I     &kp U  &kp Y                  &none &none  &none &none &none &none
-&trans    &kp SEMI &kp L   &kp K     &kp J  &kp H                  &none &none  &none &none &none &none
-&kp RSHFT &kp FSLH &kp DOT &kp COMMA &kp M  &kp N  &trans   &trans &none &none  &none &none &none &none
-                   &none   &none     &trans &trans &trans   &trans &trans &none &none &none
+&kp BSPC  &kp N0   &kp N9    &kp N8    &kp N7 &kp N6                 &none &none  &none &none &none &none
+&kp NUBS  &kp P    &kp O     &kp I     &kp U  &kp Y                  &none &none  &none &none &none &none
+&trans    &kp SEMI &kp L     &kp K     &kp J  &kp H                  &none &none  &none &none &none &none
+&kp RSHFT &kp FSLH &kp DOT   &kp COMMA &kp M  &kp N  &trans   &trans &none &none  &none &none &none &none
+                   &kp PSCRN &none     &trans &trans &trans   &trans &trans &none &none &none
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
         };
