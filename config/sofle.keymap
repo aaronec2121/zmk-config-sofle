@@ -195,66 +195,6 @@
                 key-positions = <57 58>;
                 bindings = <&kp UP>;
             };
-            cmb_plusL {
-                timeout-ms = <50>;
-                key-positions = <51 28>;
-                bindings = <&kp PLUS>;
-            };
-            cmb_plusR {
-                timeout-ms = <50>;
-                key-positions = <54 28>;
-                bindings = <&kp PLUS>;
-            };
-            cmb_minusL {
-                timeout-ms = <50>;
-                key-positions = <51 29>;
-                bindings = <&kp MINUS>;
-            };
-            cmb_minusR {
-                timeout-ms = <50>;
-                key-positions = <54 29>;
-                bindings = <&kp MINUS>;
-            };
-            cmb_slashL {
-                timeout-ms = <50>;
-                key-positions = <51 41>;
-                bindings = <&kp FSLH>;
-            };
-            cmb_slashR {
-                timeout-ms = <50>;
-                key-positions = <54 41>;
-                bindings = <&kp FSLH>;
-            };
-            cmb_starL {
-                timeout-ms = <50>;
-                key-positions = <51 40>;
-                bindings = <&kp STAR>;
-            };
-            cmb_starR {
-                timeout-ms = <50>;
-                key-positions = <54 40>;
-                bindings = <&kp STAR>;
-            };
-            cmb_equalL {
-                timeout-ms = <50>;
-                key-positions = <51 16>;
-                bindings = <&kp EQUAL>;
-            };
-            cmb_equalR {
-                timeout-ms = <50>;
-                key-positions = <54 16>;
-                bindings = <&kp EQUAL>;
-            };
-            cmb_underL {
-                timeout-ms = <50>;
-                key-positions = <51 17>;
-                bindings = <&kp UNDER>;
-            };
-            cmb_underR {
-                timeout-ms = <50>;
-                key-positions = <54 17>;
-                bindings = <&kp UNDER>;
-            };
             cmb_caps {
                 timeout-ms = <50>;
                 key-positions = <24 47>;
@@ -264,11 +204,6 @@
                 timeout-ms = <50>;
                 key-positions = <55 56 57>;
                 bindings = <&mo ADJUST>;
-            };
-            cmb_mirrorlayer {
-                timeout-ms = <50>;
-                key-positions = <24 51>;
-                bindings = <&mo MIRROR>;
             };
         };
     };
@@ -327,14 +262,14 @@
 // ------------------------------------------------------------------------------------------------------------
 // |    `    |  ~   |     |     |  $  |  () |                  | .025 | .050 | .075 | 0.1 | 0.125 |  BKSPC  |
 // |   TAB   |  7   |  8  |  9  |  =  |  _  |                  |  σ   |  µ   |  ε   |  {  |   }   |         |
-// |SHFT/CAPS|  4   |  5  |  6  |  +  |  -  |                  |  °   |  π   |  ±   |  [  |   ]   |         |
+// |MirrorLyr|  4   |  5  |  6  |  +  |  -  |                  |  °   |  π   |  ±   |  [  |   ]   |         |
 // |BaseLayer|  1   |  2  |  3  |  *  |  /  | MUTE| |PLAY/PAUSE| HOME | END  |  ,   |  .  | LGUI  |PRINTSCRN|
 //                  |  0  |  .  | RET |     |SPACE| |  SPACE   |      |  <-  |   v  |  -> |
             bindings = <
-&kp GRAVE &kp TILDE &none  &none   &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125  &kp BSPC
-&trans    &kp N7    &kp N8 &kp N9  &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC &none
-&trans    &kp N4    &kp N5 &kp N6  &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT &none
-&to BASE  &kp N1    &kp N2 &kp N3  &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &kp LGUI &kp PSCRN
+&kp GRAVE  &kp TILDE &none  &none  &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125  &kp BSPC
+&trans     &kp N7    &kp N8 &kp N9 &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC &none
+&mo MIRROR &kp N4    &kp N5 &kp N6 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT &none
+&to BASE   &kp N1    &kp N2 &kp N3 &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &kp LGUI &kp PSCRN
                     &kp N0 &kp DOT &trans    &trans    &trans      &trans &trans   &trans  &trans   &trans
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
