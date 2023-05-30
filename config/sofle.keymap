@@ -15,11 +15,10 @@
 #define ADJUST 3
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-    
-    &mt {
-        tapping-term-ms = <200>;
-        retro-tap;
-    };
+&mt {
+    tapping-term-ms = <200>;
+    retro-tap;
+};
     
 / {
     macros {
@@ -176,6 +175,15 @@
                 ;
         };
         
+/*                        KEY POSITIONS
+  ╭────────────────────────╮         ╭────────────────────────╮
+  │  0   1   2   3   4   5 │         │  6   7   8   9  10  11 │
+  │ 12  13  14  15  16  17 │         │ 18  19  20  21  22  23 │
+  │ 24  25  26  27  28  29 │         │ 30  31  32  33  34  35 │
+  │ 36  37  38  39  40  41 ╰───╮ ╭───╯ 42  43  44  45  46  47 │
+  ╰───────╮ 48  49  50  51  52 │ │ 53  54  55  56  57 ╭───────╯
+          ╰────────────────────╯ ╰────────────────────╯        */
+        
         combos {
             compatible = "zmk,combos";
             cmb_bspc {
@@ -193,15 +201,35 @@
                 key-positions = <34 35>;
                 bindings = <&kp RSHFT>;
             };
-            cmb_up {
+            cmb_upRight {
                 timeout-ms = <50>;
-                key-positions = <57 58>;
+                key-positions = <55 56>;
                 bindings = <&kp UP>;
             };
             cmb_enter {
                 timeout-ms = <50>;
                 key-positions = <46 47>;
                 bindings = <&kp RET>;
+            };
+            cmb_up {
+                timeout-ms = <50>;
+                key-positions = <14 16>;
+                bindings = <&kp UP>;
+            };
+            cmb_dn {
+                timeout-ms = <50>;
+                key-positions = <26 28>;
+                bindings = <&kp DOWN>;
+            };
+            cmb_left {
+                timeout-ms = <50>;
+                key-positions = <26 27>;
+                bindings = <&kp LEFT>;
+            };
+            cmb_right {
+                timeout-ms = <50>;
+                key-positions = <27 28>;
+                bindings = <&kp RIGHT>;
             };
         };
     };
