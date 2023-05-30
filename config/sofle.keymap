@@ -14,7 +14,7 @@
 #define MIRROR 2
 #define ADJUST 3
 
-#define MO_TOG(1) &mo_tog 1 1   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
     
     &mt {
         tapping-term-ms = <200>;
