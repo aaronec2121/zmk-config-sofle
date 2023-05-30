@@ -13,9 +13,12 @@
 #define RAISE 1
 #define MIRROR 2
 #define ADJUST 3
+
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
     
     &mt {
         tapping-term-ms = <200>;
+        retro-tap;
     };
     
 / {
@@ -195,10 +198,10 @@
                 key-positions = <57 58>;
                 bindings = <&kp UP>;
             };
-            cmb_caps {
+            cmb_enter {
                 timeout-ms = <50>;
-                key-positions = <24 47>;
-                bindings = <&kp CAPS>;
+                key-positions = <46 47>;
+                bindings = <&kp RET>;
             };
         };
     };
@@ -230,13 +233,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
         };
-        td_Rshftcaps: td_Rshftcaps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "td_Rshftcaps";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&kp CAPS>;
-        };
     };
   
     keymap {
@@ -247,34 +243,34 @@
 // |   ESC   |  1  |  2  |  3  |  4  |  5  |                  |  6  |  7   |  8   |  9  |   0   |  BKSPC  |
 // |   TAB   |  Q  |  W  |  E  |  R  |  T  |                  |  Y  |  U   |  I   |  O  |   P   |    |    |
 // |SHFT/CAPS|  A  |  S  |  D  |  F  |  G  |                  |  H  |  J   |  K   |  L  |  ; :  |   ' "   |
-// |   CTRL  |  Z  |  X  |  C  |  V  |  B  |MUTE | |PLAY/PAUSE|  N  |  M   |  ,   |  .  |  / ?  |SHFT/CAPS|
-//                 | WIN | ALT | RET |RAISE|SPACE| |  SPACE   |RAISE|  <-  |   v  |  -> |
+// |   CTRL  |  Z  |  X  |  C  |  V  |  B  |PLAY/PAUSE| |MUTE |  N  |  M   |  ,   |  .  |  / ?  |SHFT/CAPS|
+//                 | WIN | ALT | RET |RAISE|  SPACE   | |SPACE|RAISE|  <-  |   v  |  -> |
             bindings = <
-&kp ESC       &kp N1 &kp N2   &kp N3   &kp N4  &kp N5                         &kp N6    &kp N7   &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp TAB       &kp Q  &kp W    &kp E    &kp R   &kp T                          &kp Y     &kp U    &kp I     &kp O    &kp P    &kp PIPE
-&td_Lshftcaps &kp A  &kp S    &kp D    &kp F   &kp G                          &kp H     &kp J    &kp K     &kp L    &kp SEMI &kp APOS
-&kp LCTRL     &kp Z  &kp X    &kp C    &kp V   &kp B     &kp C_MUTE &kp C_PP  &kp N     &kp M    &kp COMMA &kp DOT  &kp FSLH &td_Rshftcaps
-                     &kp LGUI &kp LALT &kp RET &mo RAISE &kp SPACE  &kp SPACE &mo RAISE &kp LEFT &kp DOWN &kp RIGHT
+&kp ESC       &kp N1 &kp N2   &kp N3   &kp N4  &kp N5                         &kp N6     &kp N7   &kp N8    &kp N9   &kp N0   &kp BSPC
+&kp TAB       &kp Q  &kp W    &kp E    &kp R   &kp T                          &kp Y      &kp U    &kp I     &kp O    &kp P    &kp PIPE
+&td_Lshftcaps &kp A  &kp S    &kp D    &kp F   &kp G                          &kp H      &kp J    &kp K     &kp L    &kp SEMI &kp APOS
+&kp LCTRL     &kp Z  &kp X    &kp C    &kp V   &kp B     &kp C_PP  &kp C_MUTE &kp N      &kp M    &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                     &kp LGUI &kp LALT &kp RET &mo RAISE &kp SPACE &kp SPACE  &MO_TOG(1) &kp LEFT &kp DOWN &kp RIGHT
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp UP DOWN>;
         };
         
         raise_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |    `    |  ~   |     |     |  $  |  () |                  | .025 | .050 | .075 | 0.1 | 0.125 |  BKSPC  |
+// |    `    |  ~   |  (  |  )  |  $  |  () |                  | .025 | .050 | .075 | 0.1 | 0.125 |  BKSPC  |
 // |   TAB   |  7   |  8  |  9  |  =  |  _  |                  |  σ   |  µ   |  ε   |  {  |   }   |         |
 // |MirrorLyr|  4   |  5  |  6  |  +  |  -  |                  |  °   |  π   |  ±   |  [  |   ]   |         |
-// |BaseLayer|  1   |  2  |  3  |  *  |  /  | MUTE| |PLAY/PAUSE| HOME | END  |  ,   |  .  |       |AdjustLyr|
-//                  |  0  |  .  | RET |     |SPACE| |  SPACE   |      |  <-  |   v  |  -> |
+// |BaseLayer|  1   |  2  |  3  |  *  |  /  |PLAY/PAUSE| |MUTE | HOME | END  |  ,   |  .  |       |AdjustLyr|
+//                  |  0  |  .  | RET |     |  SPACE   | |SPACE|      |  <-  |   v  |  -> |
             bindings = <
-&kp GRAVE  &kp TILDE &none  &none  &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125    &kp BSPC
-&trans     &kp N7    &kp N8 &kp N9 &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC   &none
-&mo MIRROR &kp N4    &kp N5 &kp N6 &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT   &none
-&to BASE   &kp N1    &kp N2 &kp N3 &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &mo ADJUST &mo ADJUST
-                    &kp N0 &kp DOT &trans    &trans    &trans      &trans &trans   &trans  &trans   &trans
+&kp GRAVE  &kp TILDE &kp LPAR &kp RPAR &kp DLLR  &paren                       &sw_025  &sw_050 &sw_075  &sw_100  &sw_125    &kp BSPC
+&trans     &kp N7    &kp N8   &kp N9   &kp EQUAL &kp UNDER                    &sym_sig &sym_mu &sym_eps &kp LBRC &kp RBRC   &none
+&mo MIRROR &kp N4    &kp N5   &kp N6   &kp PLUS  &kp MINUS                    &sym_deg &sym_pi &plsmns  &kp LBKT &kp RBKT   &none
+&to BASE   &kp N1    &kp N2   &kp N3   &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END &trans   &trans   &mo ADJUST &mo ADJUST
+                     &kp N0   &kp DOT  &trans    &trans    &trans      &trans &trans   &trans  &trans   &trans
             >;
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp LEFT RIGHT>;
         };
         
         mirror_layer {
@@ -283,8 +279,8 @@
 // | BKSPC |  0   |  9  |  8  |  7  |  6  |                  |      |      |       |      |       |     |
 // |   |   |  P   |  O  |  I  |  U  |  Y  |                  |      |      |       |      |       |     |
 // |       |  ; : |  L  |  K  |  J  |  H  |                  |      |      |       |      |       |     |
-// | RSHFT |  / ? |  .  |  ,  |  M  |  N  | MUTE| |PLAY/PAUSE|      |      |       |      |       |     |
-//                |PSCRN|     | RET |     |SPACE| |          |      |      |       |      |
+// | RSHFT |  / ? |  .  |  ,  |  M  |  N  |PLAY/PAUSE| |MUTE |      |      |       |      |       |     |
+//                |PSCRN|     | RET |     |  SPACE   | |     |      |      |       |      |
             bindings = <
 &kp BSPC  &kp N0   &kp N9    &kp N8    &kp N7 &kp N6                 &none &none  &none &none &none &none
 &kp PIPE  &kp P    &kp O     &kp I     &kp U  &kp Y                  &none &none  &none &none &none &none
@@ -292,7 +288,7 @@
 &kp RSHFT &kp FSLH &kp DOT   &kp COMMA &kp M  &kp N  &trans   &trans &none &none  &none &none &none &none
                    &kp PSCRN &none     &trans &trans &trans   &trans &trans &none &none &none
             >;
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp LEFT RIGHT>;
         };
         
         Adjust_layer {
@@ -300,8 +296,8 @@
 // |BTCLR    | BT1   | BT2   |  BT3  |  BT4  |  BT5  |                 |      |      |       |      |       |     |
 // |EXTPWR   |RGB_HUI|RGB_SAI|RGB_BRI|RGB_EFF|       |                 |      |      |       |      |       |     |
 // |         |RGB_HUD|RGB_SAD|RGB_BRD|RGB_TOG|       |                 |      |      |       |      |       |     |
-// |BaseLayer|       |       |       |       |       |MUTE| |PLAY/PAUSE|      |      |       |      |       |     |
-//                   |       |       |       |       |    | |          |      |      |       |      |
+// |BaseLayer|       |       |       |       |       |PLAY/PAUSE| |MUTE|      |      |       |      |       |     |
+//                   |       |       |       |       |          | |    |      |      |       |      |
 
         bindings = <
 &bt BT_CLR                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3     &bt BT_SEL 4                 &none &none &none &none &none &none
@@ -310,7 +306,7 @@
 &to BASE                        &none           &none           &none           &none            &none          &trans &trans &none &none &none &none &none &none
                                                 &none           &none           &none            &none          &none  &none  &none &none &none &none
             >;
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV &inc_dec_kp LEFT RIGHT>;
         };
     };
 };
