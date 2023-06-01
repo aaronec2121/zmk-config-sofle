@@ -380,36 +380,37 @@
         };
         
         raise_layer {
-/* ╭───────────────────────────────────╮                 ╭───────────────────────────────────╮
-   |    `      ~     (    )    $    () |                 | .025  .125  .25  .375  0.5  BKSPC |
-   |   TAB     7     8    9    =    _  |                 |  σ     µ     ε    {     }   BSLH  |
-   |MirrorLyr  4     5    6    +    -  ╰───────╮ ╭───────╯  °     π     ±    [     ]         |
-   |           1     2    3    *    /     C_PP | | C_PP    HOME  END    ,    .      AdjustLyr|
-   ╰────────────╮    0    .  ENTER       SPACE | | SPACE          <-    v   -> ╭─────────────╯
-                ╰──────────────────────────────╯ ╰─────────────────────────────╯              */
+/* ╭───────────────────────────────────╮               ╭───────────────────────────────────╮
+   |    `      ~     (    )    $    () |               | .025  .125  .25  .375  0.5  BKSPC |
+   |   TAB     7     8    9    =    _  |               |  σ     µ     ε    {     }   BSLH  |
+   |MirrorLyr  4     5    6    +    -  ╰──────╮ ╭──────╯  °     π     ±    [     ]         |
+   |           1     2    3    *    /    C_PP | | C_PP   HOME  END    ,    .      AdjustLyr|
+   ╰────────────╮    0    .  ENTER      SPACE | | SPACE         <-    v   -> ╭─────────────╯
+                ╰─────────────────────────────╯ ╰────────────────────────────╯              */
             bindings = <
-&kp GRAVE  &kp TILDE &kp LPAR &kp RPAR &kp DLLR  &mcr_paren                   &mcr_025 &mcr_125 &mcr_250 &mcr_375 &mcr_500 &kp BSPC
-&trans     &kp N7    &kp N8   &kp N9   &kp EQUAL &kp UNDER                    &sym_sig &sym_mu  &sym_eps &kp LBRC &kp RBRC &kp BSLH
-&mo MIRROR &kp N4    &kp N5   &kp N6   &kp PLUS  &kp MINUS                    &sym_deg &sym_pi  &plsmns  &kp LBKT &kp RBKT &none
-&trans     &kp N1    &kp N2   &kp N3   &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END  &trans   &trans   &none    &mo ADJUST
-                     &kp N0   &kp DOT  &trans    &trans    &trans      &trans &trans   &trans   &trans   &trans
+&kp GRAVE  &kp TILDE &kp LPAR &kp RPAR &kp DLLR  &mcr_paren                   &mcr_025 &mcr_125 &mcr_250    &mcr_375 &mcr_500 &kp BSPC
+&trans     &kp N7    &kp N8   &kp N9   &kp EQUAL &kp UNDER                    &mcr_sig &mcr_mu  &mcr_eps    &kp LBRC &kp RBRC &kp BSLH
+&mo MIRROR &kp N4    &kp N5   &kp N6   &kp PLUS  &kp MINUS                    &mcr_deg &mcr_pi  &mcr_plsmns &kp LBKT &kp RBKT &none
+&trans     &kp N1    &kp N2   &kp N3   &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END  &trans      &trans   &none    &mo ADJUST
+                     &kp N0   &kp DOT  &trans    &trans    &trans      &trans &trans   &trans   &trans      &trans
             >;
             sensor-bindings = <&inc_dec_kp HOME END &inc_dec_kp LEFT RIGHT>;
         };
         
         mirror_layer {
-// ------------------------------------------------------------------------------------------------------------
-// | BKSPC |  0   |  9  |  8  |  7  |  6  |                 |      |      |       |      |       |     |
-// |   |   |  P   |  O  |  I  |  U  |  Y  |                 |      |      |       |      |       |     |
-// |       |  ; : |  L  |  K  |  J  |  H  |                 |      |      |       |      |       |     |
-// | RSHFT |  / ? |  .  |  ,  |  M  |  N  |PLAY/PS| |PLAY/PS|      |      |       |      |       |     |
-//                |PSCRN|     | RET |     | SPACE | |       |      |      |       |      |
+/* ╭─────────────────────────────────╮               ╭─────────────────────────╮
+   | BKSPC   0     9    8    7    6  |               │                         │
+   |   |     P     O    I    U    Y  |               │                         │
+   |         ;:    L    K    J    H  ╰──────╮ ╭──────╯                         │
+   | RSHFT   /?    .    ,    M    N    C_PP | | C_PP                           │
+   ╰────────────╮                     SPACE | |                       ╭────────╯
+                ╰───────────────────────────╯ ╰───────────────────────╯         */
             bindings = <
-&kp BSPC      &kp N0   &kp N9    &kp N8    &kp N7 &kp N6                 &none &none  &none &none &none &none
-&kp PIPE      &kp P    &kp O     &kp I     &kp U  &kp Y                  &none &none  &none &none &none &none
-&trans        &kp SEMI &kp L     &kp K     &kp J  &kp H                  &none &none  &none &none &none &none
-&td_Rshftcaps &kp FSLH &kp DOT   &kp COMMA &kp M  &kp N  &trans   &trans &none &none  &none &none &none &none
-                       &kp PSCRN &none     &trans &trans &trans   &trans &trans &none &none &none
+&kp BSPC      &kp N0   &kp N9  &kp N8    &kp N7 &kp N6                 &none &none  &none &none &none &none
+&kp PIPE      &kp P    &kp O   &kp I     &kp U  &kp Y                  &none &none  &none &none &none &none
+&trans        &kp SEMI &kp L   &kp K     &kp J  &kp H                  &none &none  &none &none &none &none
+&td_Rshftcaps &kp FSLH &kp DOT &kp COMMA &kp M  &kp N  &trans   &trans &none &none  &none &none &none &none
+                       &none   &none     &none  &trans &trans   &none  &none &none &none &none
             >;
             sensor-bindings = <&inc_dec_kp HOME END &inc_dec_kp LEFT RIGHT>;
         };
