@@ -220,117 +220,25 @@
             
             COMBO(cmb_bspc, &kp BSPC, 13 14)
             COMBO(cmb_del, &kp BSPC, 14 15)
-            
-            /*cmb_bspc {
-                timeout-ms = <50>;
-                key-positions = <13 14>;
-                bindings = <&kp BSPC>;
-            };
-            cmb_del {
-                timeout-ms = <50>;
-                key-positions = <14 15>;
-                bindings = <&kp DEL>;
-            };
-            cmb_shft {
-                timeout-ms = <50>;
-                key-positions = <34 35>;
-                bindings = <&kp RSHFT>;
-            };
-            cmb_upRight {
-                timeout-ms = <50>;
-                key-positions = <57 58>;
-                bindings = <&kp UP>;
-            };
-            cmb_enter {
-                timeout-ms = <50>;
-                key-positions = <48 49>;
-                bindings = <&kp RET>;
-            };
-            cmb_up {
-                timeout-ms = <50>;
-                key-positions = <15 53>;
-                bindings = <&kp UP>;
-            };
-            cmb_dn {
-                timeout-ms = <50>;
-                key-positions = <27 53>;
-                bindings = <&kp DOWN>;
-            };
-            cmb_left {
-                timeout-ms = <50>;
-                key-positions = <26 53>;
-                bindings = <&kp LEFT>;
-            };
-            cmb_right {
-                timeout-ms = <50>;
-                key-positions = <28 53>;
-                bindings = <&kp RIGHT>;
-            };
-            cmb_pi {
-                timeout-ms = <50>;
-                key-positions = <36 53>;
-                bindings = <&mcr_pi>;
-            };
-            cmb_deg {
-                timeout-ms = <50>;
-                key-positions = <37 53>;
-                bindings = <&mcr_deg>;
-            };
-            cmb_sig {
-                timeout-ms = <50>;
-                key-positions = <38 53>;
-                bindings = <&mcr_sig>;
-            };
-            cmb_mueps {
-                timeout-ms = <50>;
-                key-positions = <40 41 53>;
-                bindings = <&mcr_mueps>;
-            };
-            cmb_mu {
-                timeout-ms = <50>;
-                key-positions = <40 53>;
-                bindings = <&mcr_mu>;
-            };
-            cmb_eps {
-                timeout-ms = <50>;
-                key-positions = <41 53>;
-                bindings = <&mcr_eps>;
-            };
-            cmb_plsmns {
-                timeout-ms = <50>;
-                key-positions = <28 29 53>;
-                bindings = <&mcr_plsmns>;
-            };
-            cmb_pscrn {
-                timeout-ms = <50>;
-                key-positions = <50 53>;
-                bindings = <&kp PSCRN>;
-            };
-            cmb_025 {
-                timeout-ms = <50>;
-                key-positions = <1 53>;
-                bindings = <&mcr_025>;
-            };
-            cmb_125 {
-                timeout-ms = <50>;
-                key-positions = <2 53>;
-                bindings = <&mcr_125>;
-            };
-            cmb_250 {
-                timeout-ms = <50>;
-                key-positions = <3 53>;
-                bindings = <&mcr_250>;
-            };
-            cmb_375 {
-                timeout-ms = <50>;
-                key-positions = <4 53>;
-                bindings = <&mcr_375>;
-            };
-            cmb_500 {
-                timeout-ms = <50>;
-                key-positions = <5 53>;
-                bindings = <&mcr_500>;
-            };*/
+            COMBO(cmb_enter, &kp UP, 48 49)
+            COMBO(cmb_up1, &kp UP, 57 58)
+            COMBO(cmb_up, &kp UP, 15 53)
+            COMBO(cmb_down, &kp DOWN, 27 53)
+            COMBO(cmb_left, &kp LEFT, 26 53)
+            COMBO(cmb_right, &kp RIGHT, 28 53)
+            COMBO(cmb_pi, &mcr_pi, 36 53)
+            COMBO(cmb_deg, &mcr_deg, 37 53)
+            COMBO(cmb_sig, &mcr_sig, 38 53)
+            COMBO(cmb_mueps, &mcr_mueps, 40 41 53)
+            COMBO(cmb_mu, &mcr_mu, 40 53)
+            COMBO(cmb_eps, &mcr_eps, 41 53)
+            COMBO(cmb_plsmns, &mcr_plsmns, 28 29 53)
+            COMBO(cmb_pscrn, &kp PSCRN, 50 53)
+            COMBO(cmb_025, &mcr_025, 1 53)
+            COMBO(cmb_125, &mcr_125, 2 53)
+            COMBO(cmb_250, &mcr_250, 3 53)
+            COMBO(cmb_375, &mcr_375, 4 53)
+            COMBO(cmb_500, &mcr_500, 5 53)
         };
     };
 };
