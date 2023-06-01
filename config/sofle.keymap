@@ -92,8 +92,8 @@
                 , <&macro_tap &kp RET>
                 ;
         };
-        sym_deg: sym_deg {
-            label = "sym_deg";
+        mcr_deg: mcr_deg {
+            label = "mcr_deg";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -104,8 +104,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sym_mueps: sym_mueps {
-            label = "sym_mueps";
+        mcr_mueps: mcr_mueps {
+            label = "mcr_mueps";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -119,8 +119,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sym_mu: sym_mu {
-            label = "sym_mu";
+        mcr_mu: mcr_mu {
+            label = "mcr_mu";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -131,8 +131,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sym_eps: sym_eps {
-            label = "sym_eps";
+        mcr_eps: mcr_eps {
+            label = "mcr_eps";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -143,8 +143,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sym_pi: sym_pi {
-            label = "sym_pi";
+        mcr_pi: mcr_pi {
+            label = "mcr_pi";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -155,8 +155,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        sym_sig: sym_sig {
-            label = "sym_sig";
+        mcr_sig: mcr_sig {
+            label = "mcr_sig";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -167,8 +167,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        plsmns: plsmns {
-            label = "plsmns";
+        mcr_plsmns: mcr_plsmns {
+            label = "mcr_plsmns";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -179,8 +179,8 @@
                 , <&macro_release &kp LALT>
                 ;
         };
-        paren: paren {
-            label = "paren";
+        mcr_paren: mcr_paren {
+            label = "mcr_paren";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -190,9 +190,7 @@
                 ;
         };
         
-
-          
-        
+  
         combos {
 /*                        KEY POSITIONS
   ╭────────────────────────╮         ╭────────────────────────╮
@@ -259,37 +257,37 @@
             cmb_pi {
                 timeout-ms = <50>;
                 key-positions = <36 53>;
-                bindings = <&sym_pi>;
+                bindings = <&mcr_pi>;
             };
             cmb_deg {
                 timeout-ms = <50>;
                 key-positions = <37 53>;
-                bindings = <&sym_deg>;
+                bindings = <&mcr_deg>;
             };
             cmb_sig {
                 timeout-ms = <50>;
                 key-positions = <38 53>;
-                bindings = <&sym_sig>;
+                bindings = <&mcr_sig>;
             };
             cmb_mueps {
                 timeout-ms = <50>;
                 key-positions = <40 41 53>;
-                bindings = <&sym_mueps>;
+                bindings = <&mcr_mueps>;
             };
             cmb_mu {
                 timeout-ms = <50>;
                 key-positions = <40 53>;
-                bindings = <&sym_mu>;
+                bindings = <&mcr_mu>;
             };
             cmb_eps {
                 timeout-ms = <50>;
                 key-positions = <41 53>;
-                bindings = <&sym_eps>;
+                bindings = <&mcr_eps>;
             };
             cmb_plsmns {
                 timeout-ms = <50>;
                 key-positions = <28 29 53>;
-                bindings = <&sym_plsmns>;
+                bindings = <&mcr_plsmns>;
             };
             cmb_pscrn {
                 timeout-ms = <50>;
@@ -390,7 +388,7 @@
    ╰────────────╮    0    .  ENTER       SPACE | | SPACE          <-    v   -> ╭─────────────╯
                 ╰──────────────────────────────╯ ╰─────────────────────────────╯              */
             bindings = <
-&kp GRAVE  &kp TILDE &kp LPAR &kp RPAR &kp DLLR  &paren                       &mcr_025 &mcr_125 &mcr_250 &mcr_375 &mcr_500 &kp BSPC
+&kp GRAVE  &kp TILDE &kp LPAR &kp RPAR &kp DLLR  &mcr_paren                   &mcr_025 &mcr_125 &mcr_250 &mcr_375 &mcr_500 &kp BSPC
 &trans     &kp N7    &kp N8   &kp N9   &kp EQUAL &kp UNDER                    &sym_sig &sym_mu  &sym_eps &kp LBRC &kp RBRC &kp BSLH
 &mo MIRROR &kp N4    &kp N5   &kp N6   &kp PLUS  &kp MINUS                    &sym_deg &sym_pi  &plsmns  &kp LBKT &kp RBKT &none
 &trans     &kp N1    &kp N2   &kp N3   &kp STAR  &kp FSLH  &trans      &trans &kp HOME &kp END  &trans   &trans   &none    &mo ADJUST
