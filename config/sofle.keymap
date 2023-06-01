@@ -15,6 +15,14 @@
 #define ADJUST 3
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <50>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <0>; \
+  };
+  
 &mt {
     tapping-term-ms = <200>;
     retro-tap;
@@ -209,7 +217,11 @@
   ╰───────╮ PSCRN _    _  RAISE  _ │ │ _    _   _   _   _ ╭───────╯
           ╰────────────────────────╯ ╰────────────────────╯        */
             compatible = "zmk,combos";
-            cmb_bspc {
+            
+            COMBO(cmb_bspc, &kp BSPC, 13 14)
+            COMBO(cmb_del, &kp BSPC, 14 15)
+            
+            /*cmb_bspc {
                 timeout-ms = <50>;
                 key-positions = <13 14>;
                 bindings = <&kp BSPC>;
@@ -318,7 +330,7 @@
                 timeout-ms = <50>;
                 key-positions = <5 53>;
                 bindings = <&mcr_500>;
-            };
+            };*/
         };
     };
 };
