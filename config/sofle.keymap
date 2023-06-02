@@ -215,7 +215,7 @@ ZMK_UNICODE_SINGLE(ucd_delta, N0, N3, N9, N4)  // €
   │ _  .025 .125 .25  .375 .5 │          │  _   _   _   _   _   _ │
   │ _   _    _    ^    _    _ │          │  _   _   _   _   _   _ │
   │ _   _    <-   v    ->{±}_ ╰────╮ ╭───╯  _   _   _   _   _   _ │
-  │ _   π    °    σ    µ{µε}ε    _ | | _    _   _   _   _   _   _ │
+  │ Δ   π    °    σ    µ{µε}ε    _ | | _    _   _   _   _   _   _ │
   ╰───────╮ PSCRN _    _  RAISE  _ │ │ _    _   _   _   _ ╭───────╯
           ╰────────────────────────╯ ╰────────────────────╯        */
             compatible = "zmk,combos";
@@ -228,6 +228,7 @@ ZMK_UNICODE_SINGLE(ucd_delta, N0, N3, N9, N4)  // €
             COMBO(cmb_down, &kp DOWN, 27 53)
             COMBO(cmb_left, &kp LEFT, 26 53)
             COMBO(cmb_right, &kp RIGHT, 28 53)
+            COMBO(cmb_delta, &ucd_delta, 36 53)
             COMBO(cmb_pi, &mcr_pi, 37 53)
             COMBO(cmb_deg, &mcr_deg, 38 53)
             COMBO(cmb_sig, &mcr_sig, 39 53)
