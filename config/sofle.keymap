@@ -219,8 +219,8 @@
             compatible = "zmk,combos";
             
             COMBO(cmb_bspc, &kp BSPC, 13 14)
-            COMBO(cmb_del, &kp BSPC, 14 15)
-            COMBO(cmb_enter, &kp UP, 48 49)
+            COMBO(cmb_del, &kp DEL, 14 15)
+            COMBO(cmb_enter, &kp RET, 48 49)
             COMBO(cmb_up1, &kp UP, 57 58)
             COMBO(cmb_up, &kp UP, 15 53)
             COMBO(cmb_down, &kp DOWN, 27 53)
