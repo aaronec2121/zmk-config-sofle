@@ -22,7 +22,9 @@
     key-positions = <KEYPOS>; \
     layers = <0>; \
   };
-  
+
+ZMK_UNICODE_SINGLE(ucd_delta, N0, N3, N9, N4)  // €
+
 &mt {
     tapping-term-ms = <200>;
     retro-tap;
