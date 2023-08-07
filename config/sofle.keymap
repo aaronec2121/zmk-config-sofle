@@ -198,6 +198,19 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 = <&macro_tap &kp F2 &kp LPAR &kp RPAR &kp LEFT>
                 ;
         };
+        mcr_pw: mcr_pw {
+            label = "mcr_paren";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <10>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp I>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp n &kp t &kp e &kp r &kp f &kp e &kp r &kp o &kp m &kp e &kp t &kp e &kp r &kp N3 &kp RET>
+                ;
+        };
         
   
         combos {
@@ -214,7 +227,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
   │ _  .025 .125 .25  .375 .5 │          │  _   _   _   _   _   _ │
   │ _   _    _    ^    _    _ │          │  _   _   _   _   _   _ │
   │ _   _    <-   v    ->{±}_ ╰────╮ ╭───╯  _   _   _   _   _   _ │
-  │ Δ   π    °    σ    µ{µε}ε    _ | | _    _   _   _   _   _   _ │
+  │ _   π    °    σ    µ{µε}ε    _ | | _    _   _   _   _   _   _ │
   ╰───────╮ PSCRN _    _  RAISE  _ │ │ _    _   _   _   _ ╭───────╯
           ╰────────────────────────╯ ╰────────────────────╯        */
             compatible = "zmk,combos";
@@ -241,6 +254,8 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
             COMBO(cmb_250, &mcr_250, 3 53)
             COMBO(cmb_375, &mcr_375, 4 53)
             COMBO(cmb_500, &mcr_500, 5 53)
+            COMBO(cmb_pw, &mcr_pw, 9 10 11)
+            COMBO(cmb_minus, &kp MINUS, 28 29)
         };
     };
 };
@@ -340,15 +355,15 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
         Adjust_layer {
 /* ╭─────────────────────────────────╮          ╭─────────────────────────╮
    │ BTCLR   BT1  BT2  BT3  BT4  BT5 │          │  _   _   _   _   _   _  │
-   │ ExtPwr  Hue+ Sat+ Bri+ Eff   _  │          │  _   _   _   _   _   _  │
-   │ TogRGB  Hue- Sat- Bri-  _    _  ╰────╮ ╭───╯  _   _   _   _   _   _  │
+   │ ExtPwr  Hue+ Sat+ Bri+  _    _  │          │  _   _   _   _   _   _  │
+   │ TogRGB  Hue- Sat- Bri- Eff   _  ╰────╮ ╭───╯  _   _   _   _   _   _  │
    │   _      _    _    _    _    _     _ | | _    _   _   _   _   _   _  │
    ╰────────╮ _    _    _    _    _     _ │ │ _    _   _   _   _ ╭────────╯
             ╰─────────────────────────────╯ ╰────────────────────╯        */
         bindings = <
 &bt BT_CLR                      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4               &none &none &none &none &none &none
-&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &rgb_ug RGB_EFF &none                      &none &none &none &none &none &none
-&rgb_ug RGB_TOG                 &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &none           &none                      &none &none &none &none &none &none
+&ext_power EXT_POWER_TOGGLE_CMD &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_BRI &none           &none                      &none &none &none &none &none &none
+&rgb_ug RGB_TOG                 &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_BRD &rgb_ug RGB_EFF &none                      &none &none &none &none &none &none
 &none                           &none           &none           &none           &none           &none        &trans &trans &none &none &none &none &none &none
                                                 &none           &none           &none           &none        &none  &none  &none &none &none &none
             >;
