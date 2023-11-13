@@ -258,7 +258,6 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
             COMBO(cmb_pw, &mcr_pw, 9 10 11)
             COMBO(cmb_minus, &kp MINUS, 28 29)
         };
-    };
 };
 
 / {
