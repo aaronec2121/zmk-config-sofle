@@ -198,7 +198,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 = <&macro_tap &kp F2 &kp LPAR &kp RPAR &kp LEFT>
                 ;
         };
-        mcr_pw: mcr_pw {
+        /*mcr_pw: mcr_pw {
             label = "mcr_pw";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -210,7 +210,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 , <&macro_release &kp LSHFT>
                 , <&macro_tap &kp n &kp t &kp e &kp r &kp f &kp e &kp r &kp o &kp m &kp e &kp t &kp e &kp r &kp N4 &kp RET>
                 ;
-        };
+        };*/
 };
         
   
@@ -255,7 +255,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
             COMBO(cmb_250, &mcr_250, 3 53)
             COMBO(cmb_375, &mcr_375, 4 53)
             COMBO(cmb_500, &mcr_500, 5 53)
-            COMBO(cmb_pw, &mcr_pw, 9 10 11)
+            #COMBO(cmb_pw, &mcr_pw, 9 10 11)
             COMBO(cmb_minus, &kp MINUS, 28 29)
         };
 };
