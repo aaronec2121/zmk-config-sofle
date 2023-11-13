@@ -199,7 +199,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 ;
         };
         mcr_pw: mcr_pw {
-            label = "mcr_paren";
+            label = "mcr_pw";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <20>;
@@ -208,7 +208,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp I>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp n &kp t &kp e &kp r &kp f &kp e &kp r &kp o &kp m &kp e &kp t &kp e &kp r &kp N3 &kp RET>
+                , <&macro_tap &kp n &kp t &kp e &kp r &kp f &kp e &kp r &kp o &kp m &kp e &kp t &kp e &kp r &kp N4 &kp RET>
                 ;
         };
         
