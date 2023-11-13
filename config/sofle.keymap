@@ -211,6 +211,7 @@ ZMK_UNICODE_SINGLE(ucd_delta,  N0, N3, N9, N4)
                 , <&macro_tap &kp n &kp t &kp e &kp r &kp f &kp e &kp r &kp o &kp m &kp e &kp t &kp e &kp r &kp N4 &kp RET>
                 ;
         };
+};
         
   
         combos {
